@@ -1,8 +1,8 @@
 public class Auto extends Vehiculo {
 
 
-    public Auto(String marca, String modelo, String patente, int horasEstadia) {
-        super(marca, modelo, patente, horasEstadia);
+    public Auto(String marca, String modelo, String patente, int horasEstimadas) {
+        super(marca, modelo, patente, horasEstimadas);
     }
 
     @Override
@@ -11,9 +11,15 @@ public class Auto extends Vehiculo {
     }
 
     @Override
-    public double calcularTarifa(int horas) {
+    public double calcularTarifa() {
         int valorHoraAuto = 1000;
-        return (valorHoraAuto * horas);
+        return valorHoraAuto * this.horasEstimadas;
+    }
+
+    @Override
+    public void mostrarDatos(){
+        System.out.println("Vehiculo: " + getTipoVehiculo()+ "/ Marca: " + this.marca + "/ Modelo: " + this.modelo + "/ Patente: " + this.patente);
+        System.out.println("Horas Estimadas: " + this.horasEstimadas + "/ Costo total estimado: $" + calcularTarifa());
     }
 
 
@@ -24,7 +30,7 @@ public class Auto extends Vehiculo {
 
     @Override
     public String getTipoVehiculo() {
-        return "Auto";
+        return "Automovil";
     }
 
 

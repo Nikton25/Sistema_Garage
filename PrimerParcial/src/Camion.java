@@ -1,8 +1,8 @@
 public class Camion extends Vehiculo {
 
 
-    public Camion(String marca, String modelo, String patente, int horasEstadia) {
-        super(marca, modelo, patente, horasEstadia);
+    public Camion(String marca, String modelo, String patente, int horasEstimadas) {
+        super(marca, modelo, patente, horasEstimadas);
     }
 
     @Override
@@ -11,9 +11,14 @@ public class Camion extends Vehiculo {
     }
 
     @Override
-    public double calcularTarifa(int horas) {
+    public double calcularTarifa() {
         int valorHoraCamion = 1500;
-        return (valorHoraCamion * horas);
+        return valorHoraCamion * this.horasEstimadas;
+    }
+    @Override
+    public void mostrarDatos(){
+        System.out.println("Vehiculo: " + getTipoVehiculo()+ "/ Marca: " + this.marca + "/ Modelo: " + this.modelo + "/ Patente: " + this.patente);
+        System.out.println("Horas Estimadas: " + this.horasEstimadas + "/ Costo total estimado: $" + calcularTarifa());
     }
 
     @Override

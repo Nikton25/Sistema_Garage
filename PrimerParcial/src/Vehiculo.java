@@ -1,42 +1,36 @@
-public abstract class Vehiculo implements Calculable {
+public abstract class Vehiculo implements Calculable, Mostrable {
 
     protected String marca;
     protected String modelo;
     protected String patente;
-    protected int valorHora;
     protected int horasEstimadas;
-    protected Estadia estadia;
-    protected int espacio;
-    protected String tipoVehiculo;
 
 
-    public Vehiculo(String marca, String modelo, String patente, int horasEstadia) {
+    public Vehiculo(String marca, String modelo, String patente, int horasEstimadas) {
         this.marca = marca;
         this.modelo = modelo;
         this.patente = patente;
-    }
-
-    public Estadia getEstadia() {
-        return estadia;
-    }
-    public void setEstadia(Estadia estadia) {
-        this.estadia = estadia;
+        this.horasEstimadas = horasEstimadas;
     }
 
     public String getPatente() {
         return patente;
     }
 
-    @Override
-    public double calcularTarifa(int horas) {
-        double calculo = horas * horasEstimadas;
-        return calculo;
+    public int getHorasEstimadas() {
+        return horasEstimadas;
     }
+
+    @Override
+    public abstract double calcularTarifa();
+
+    @Override
+    public abstract void mostrarDatos();
+
 
     public abstract int getEspacio();
 
     public abstract String getTipoVehiculo();
-
 
 
 
