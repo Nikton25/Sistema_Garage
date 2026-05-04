@@ -87,20 +87,6 @@ public class Garage {
                 System.out.println("------------------------------");
             }
         }
-        StringBuilder est = new StringBuilder();
-        int contadorAutos = 0;
-        int contadorMotos = 0;
-        int contadorCamiones = 0;
-
-
-
-        est.append("\n--- RESUMEN DE VEHICULOS ESTACIONADOS ---\n");
-        est.append("Espacio Total: ").append(capacidadMax).append("\n");
-        est.append("Espacio Libre: ").append(espacioLibre()).append("\n");
-        est.append("Espacio Ocupado: ").append(espacioOcupado()).append("\n");
-        est.append("Total Autos: ").append(contadorAutos).append("\n");
-        est.append("Total Motos: ").append(contadorMotos).append("\n");
-        est.append("Total Camiones: ").append(contadorCamiones).append("\n");
 
 
         }

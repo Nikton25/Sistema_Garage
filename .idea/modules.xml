@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PrimerParcial/PrimerParcial.iml" filepath="$PROJECT_DIR$/PrimerParcial/PrimerParcial.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Programacion_Avanzada.iml" filepath="$PROJECT_DIR$/.idea/Programacion_Avanzada.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sistema_Garage/Sistema_Garage.iml" filepath="$PROJECT_DIR$/Sistema_Garage/Sistema_Garage.iml" />
     </modules>
   </component>
 </project>
