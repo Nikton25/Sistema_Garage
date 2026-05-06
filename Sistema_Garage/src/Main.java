@@ -86,6 +86,9 @@ public class Main {
                     System.err.println("ERROR: Por Favor ingrese un número válido.");
                     System.err.println("Recuerde que las horas estimadas de estadía deben ser mayor a 0.");
                 }
+                catch (IllegalArgumentException e) {
+                    System.err.println(e.getMessage());
+                }
                 break;
 
             case 2:
