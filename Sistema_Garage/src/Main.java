@@ -145,7 +145,7 @@ public class Main {
                             break;
 
                         case 4:
-                            System.out.println("Volviendo al menú principal...");
+                            System.out.println("Volviendo al menú principal..");
                             break;
 
                         default:
@@ -156,8 +156,14 @@ public class Main {
                 }
                 break;
 
-        }
+            case 6:
+                System.out.println("Cerrando Sistema Garage. Hasta la proxima!");
+                break;
 
+            default:
+                System.out.println("ERROR: Debe elegir una opcion del 1 al 6.");
+
+        }
     }
 
 
