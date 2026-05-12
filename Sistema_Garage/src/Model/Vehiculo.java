@@ -34,6 +34,12 @@ public abstract class Vehiculo implements Calculable, Mostrable {
 
     public abstract String getTipoVehiculo();
 
+    public String getMarca() {
+        return marca;
+    }
+    public String getModelo() {
+        return modelo;
+    }
 
 
 

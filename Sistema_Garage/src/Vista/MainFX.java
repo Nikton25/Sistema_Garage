@@ -2,10 +2,13 @@ package Vista;
 
 import Model.*;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -41,6 +44,7 @@ public class MainFX extends Application {
         // Eventos
         btnIngreso.setOnAction(e -> mostrarFormularioIngreso());
         btnSalir.setOnAction(e -> ventanaPrincipal.close());
+        btnListado.setOnAction(e -> mostrarListadoVehiculos());
 
         layoutMenu.getChildren().addAll(titulo, btnIngreso, btnListado, btnSalir);
 
@@ -128,7 +132,7 @@ public class MainFX extends Application {
             } catch (NumberFormatException ex) {
                 mostrarAlerta(Alert.AlertType.ERROR, "Error de Datos", "Las horas deben ser un número válido.");
             } catch (Exception ex) {
-                // Aquí caen tus excepciones: GarageLleno, PatenteDuplicada, etc.
+                // Aca caen las excepciones: GarageLleno, PatenteDuplicada, etc.
                 mostrarAlerta(Alert.AlertType.ERROR, "Error", ex.getMessage());
             }
         });
@@ -143,6 +147,45 @@ public class MainFX extends Application {
         alerta.setHeaderText(null);
         alerta.setContentText(mensaje);
         alerta.showAndWait();
+    }
+
+    public void mostrarListadoVehiculos() {
+        VBox layout = new VBox(20);
+        layout.setPadding(new Insets(30));
+        layout.setAlignment(Pos.CENTER);
+
+        Label titulo = new Label("VEHÍCULOS ESTACIONADOS");
+        titulo.setStyle("-fx-font-size: 20px; -fx-font-weight: bold;");
+
+        TableView<Vehiculo> tabla = new TableView<>();
+
+        TableColumn<Vehiculo, String> colTipo = new TableColumn<>("Tipo");
+        colTipo.setCellValueFactory(new PropertyValueFactory<>("tipoVehiculo"));
+
+        TableColumn<Vehiculo, String> colMarca = new TableColumn<>("Marca");
+        colMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
+
+        TableColumn<Vehiculo, String> colModelo = new TableColumn<>("Modelo");
+        colModelo.setCellValueFactory(new PropertyValueFactory<>("modelo"));
+
+        TableColumn<Vehiculo, String> colPatente = new TableColumn<>("Patente");
+        colPatente.setCellValueFactory(new PropertyValueFactory<>("patente"));
+
+        // Agregamos las columnas a la tabla
+        tabla.getColumns().addAll(colTipo, colMarca, colModelo, colPatente);
+
+        ObservableList<Vehiculo> datos = FXCollections.observableArrayList(miGarage.getEstacionados());
+        tabla.setItems(datos);
+
+        tabla.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+        Button btnVolver = new Button("Volver al Menú");
+        btnVolver.setOnAction(e -> mostrarMenuPrincipal());
+
+        layout.getChildren().addAll(titulo, tabla, btnVolver);
+
+        Scene escena = new Scene(layout, 600, 500);
+        ventanaPrincipal.setScene(escena);
     }
 
     public static void main(String[] args) {
