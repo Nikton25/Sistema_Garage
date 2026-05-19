@@ -1,3 +1,9 @@
+import Exceptions.GarageLlenoException;
+import Exceptions.HorasInvalidasException;
+import Exceptions.PatenteDuplicadaException;
+import Exceptions.VehiculoNoEncontradoException;
+import Vehiculos.Vehiculo;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,20 +67,20 @@ public class Garage {
         }
 
         estacionados.add(vehiculo);
-        System.out.println("Vehiculo registrado correctamente.");
+        System.out.println("Vehiculos.Vehiculo registrado correctamente.");
 
     }
 
     public Vehiculo registrarSalida(String patente) throws VehiculoNoEncontradoException {
         Vehiculo vehiculoEncontrado = buscarPorPatente(patente);
 
-        //Validacion de Vehiculo no encontrado
+        //Validacion de Vehiculos.Vehiculo no encontrado
        if (vehiculoEncontrado==null){
            throw new VehiculoNoEncontradoException("ERROR: No se encontro ningun vehiculo con la patente " + patente + ".");
        }
 
        estacionados.remove(vehiculoEncontrado);
-       System.out.println("Vehiculo retirado del Garage correctamente.");
+       System.out.println("Vehiculos.Vehiculo retirado del Garage correctamente.");
        return vehiculoEncontrado;
     }
 

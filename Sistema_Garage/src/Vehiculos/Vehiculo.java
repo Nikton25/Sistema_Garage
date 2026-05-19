@@ -1,3 +1,7 @@
+package Vehiculos;
+import Interfaces.Calculable;
+import Interfaces.Mostrable;
+
 public abstract class Vehiculo implements Calculable, Mostrable {
 
     protected String marca;

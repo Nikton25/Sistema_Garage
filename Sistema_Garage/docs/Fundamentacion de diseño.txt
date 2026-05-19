@@ -4,16 +4,16 @@ FUNDAMENTACIÓN DE DECISIONES DE DISEÑO
 Para el desarrollo del sistema de gestión de garage se tomaron las siguientes decisiones:
 
 1. HERENCIA Y CLASES ABSTRACTAS: 
-Se implementó una clase abstracta 'Vehiculo' para centralizar atributos comunes (patente, marca, modelo) y evitar la duplicación de código. Esto permite tratar a cualquier vehículo de forma genérica en el sistema.
+Se implementó una clase abstracta 'Vehiculos.Vehiculo' para centralizar atributos comunes (patente, marca, modelo) y evitar la duplicación de código. Esto permite tratar a cualquier vehículo de forma genérica en el sistema.
 
 2. POLIMORFISMO E INTERFACES:
-Se definieron las interfaces 'Calculable' y 'Mostrable' para garantizar que todos los vehículos implementen obligatoriamente el cálculo de costos y la visualización de datos. El polimorfismo permite que la clase Garage invoque 'calcularCosto()' sin necesidad de saber si el objeto es un auto o una moto, delegando la lógica específica a cada subclase.
+Se definieron las interfaces 'Interfaces.Calculable' y 'Interfaces.Mostrable' para garantizar que todos los vehículos implementen obligatoriamente el cálculo de costos y la visualización de datos. El polimorfismo permite que la clase Garage invoque 'calcularCosto()' sin necesidad de saber si el objeto es un auto o una moto, delegando la lógica específica a cada subclase.
 
 3. MANEJO DE EXCEPCIONES:
-Se crearon 4 excepciones personalizadas (GarageLlenoException, PatenteDuplicadaException, VehiculoNoEncontradoException y HorasInvalidasException) para separar la lógica de negocio del flujo normal del programa. Esto asegura que el sistema sea sólido y que los errores se informen de manera clara al usuario a través del bloque try-catch en el Main.
+Se crearon 4 excepciones personalizadas (Exceptions.GarageLlenoException, Exceptions.PatenteDuplicadaException, Exceptions.VehiculoNoEncontradoException y Exceptions.HorasInvalidasException) para separar la lógica de negocio del flujo normal del programa. Esto asegura que el sistema sea sólido y que los errores se informen de manera clara al usuario a través del bloque try-catch en el Main.
 
 4. COLECCIONES:
-Se optó por el uso de 'ArrayList<Vehiculo>' por su flexibilidad para manejar el tamaño dinámico de los elementos estacionados, permitiendo una búsqueda y eliminación eficiente por índice o referencia de objeto.
+Se optó por el uso de 'ArrayList<Vehiculos.Vehiculo>' por su flexibilidad para manejar el tamaño dinámico de los elementos estacionados, permitiendo una búsqueda y eliminación eficiente por índice o referencia de objeto.
 
 5. DISEÑO DEL MENÚ:
 Se implementó un menú interactivo por consola utilizando la clase Scanner y bloques switch-case anidados para los reportes, asegurando una experiencia de usuario limpia y validada contra ingresos de datos incorrectos.

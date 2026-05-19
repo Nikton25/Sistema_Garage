@@ -1,3 +1,5 @@
+package Exceptions;
+
 public class VehiculoNoEncontradoException extends Exception{
 
     public VehiculoNoEncontradoException(String mensaje){

@@ -4,7 +4,7 @@
 Este sistema permite administrar de forma integral un garage o estacionamiento, gestionando el ingreso, permanencia y salida de diferentes tipos de vehículos (Autos, Motos y Camiones). El software controla la disponibilidad de espacio en tiempo real y calcula automáticamente los costos de estadía basándose en tarifas diferenciadas por tipo de vehículo.
 
 ## Características Principales
-- **Gestión de Espacios**: Cada vehículo ocupa un espacio específico (Moto: 1, Auto: 2, Camión: 4).
+- **Gestión de Espacios**: Cada vehículo ocupa un espacio específico (Vehiculos.Moto: 1, Vehiculos.Auto: 2, Camión: 4).
 - **Cálculo de Tarifas**: Polimorfismo aplicado para calcular costos según horas estimadas.
 - **Sistema de Seguridad**: Manejo de excepciones personalizadas para evitar errores de negocio (patentes duplicadas, falta de espacio, etc.).
 - **Reportes**: Visualización de recaudación total, cantidad de vehículos y estado del garage.

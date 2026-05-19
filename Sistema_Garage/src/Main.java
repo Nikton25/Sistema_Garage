@@ -1,3 +1,9 @@
+import Exceptions.GarageLlenoException;
+import Exceptions.HorasInvalidasException;
+import Exceptions.PatenteDuplicadaException;
+import Exceptions.VehiculoNoEncontradoException;
+import Vehiculos.*;
+
 import java.util.Scanner;
 
 public class Main {

@@ -1,3 +1,5 @@
+package Exceptions;
+
 public class PatenteDuplicadaException extends Exception{
 
     public PatenteDuplicadaException(String mensaje){
