@@ -10,15 +10,20 @@ public class Main {
     System.out.println("=== SISTEMA DE GARAGE ===");
 
     while(opcion!=6){
-        System.out.println("\n1. Registrar ingreso");
-        System.out.println("2. Registrar salida");
-        System.out.println("3. Listar vehículos");
-        System.out.println("4. Estado del garage");
-        System.out.println("5. Reportes");
-        System.out.println("6. Salir");
+        try {
+            System.out.println("\n1. Registrar ingreso");
+            System.out.println("2. Registrar salida");
+            System.out.println("3. Listar vehículos");
+            System.out.println("4. Estado del garage");
+            System.out.println("5. Reportes");
+            System.out.println("6. Salir");
 
-        opcion = scan.nextInt();
-        scan.nextLine();
+
+            opcion = Integer.parseInt(scan.nextLine());
+
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Por favor, ingrese un numero valido.");
+        }
 
         switch(opcion){
             case 1:
@@ -28,7 +33,7 @@ public class Main {
                     System.out.println("1) VEHICULO \n");
                     System.out.println("2) MOTOCICLETA\n");
                     System.out.println("3) CAMION");
-                    int tipoVehiculo = Integer.parseInt(scan.nextLine());
+                    int tipoVehiculo = Integer.parseInt(scan.nextLine()); //FALTA VALIDACION DE TIPO DE VEHICULO
 
                     System.out.println("Ingresa la marca");
                     String marca = scan.nextLine();
@@ -46,7 +51,7 @@ public class Main {
                     String patente = scan.nextLine();
                     if (patente.trim().isEmpty()) {
                         throw new IllegalArgumentException("ERROR: Debe ingresar la patente del vehículo.");
-                    }
+                    } //FALTA VALIDACION DE PATENTE, DEBE CONTENER NUMEROS Y LETRAS
 
                     System.out.println("Ingrese la cantidad de horas estimadas de estadía:");
                     int horasEstimadas = Integer.parseInt(scan.nextLine());
